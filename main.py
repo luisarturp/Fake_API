@@ -31,13 +31,10 @@ def main():
     token = "Sicredi123"
     
     try:
-        # Passo 1: Buscar nomes
         nomes = buscar_nomes(api_url, count=10, token=token)
         
-        # Passo 2: Calcular distâncias de Levenshtein
         distancias_ordenadas = calcular_distancia_levenshtein(nomes)
         
-        # Passo 3: Exibir o resultado em um DataFrame
         df = pd.DataFrame(distancias_ordenadas, columns=["Nome", "Distância para origem"])
         print(df)
     
